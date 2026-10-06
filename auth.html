@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}{% block content %}
+<div class="auth"><div class="auth-card"><p class="eyebrow">POCKETSMART AI</p><h1>{{ "Create account" if mode=="register" else "Welcome back" }}</h1>
+<form method="post">
+{% if mode=="register" %}<label>Name<input name="name" required placeholder="Your name"></label>{% endif %}
+<label>Email<input type="email" name="email" required placeholder="you@example.com"></label>
+<label>Password<input type="password" name="password" required placeholder="••••••••"></label>
+<button class="btn" type="submit">{{ "Create Account" if mode=="register" else "Login" }}</button>
+</form>
+<p class="muted">{% if mode=="register" %}Already registered? <a href="/login">Login</a>{% else %}New user? <a href="/register">Create account</a>{% endif %}</p>
+</div></div>
+{% endblock %}
